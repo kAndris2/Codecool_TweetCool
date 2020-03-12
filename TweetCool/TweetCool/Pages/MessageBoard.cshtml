@@ -11,22 +11,19 @@
         </head>
 
         <body>
-            <h1>This is the Messageboard</h1>
+            <h1>This is the Message board</h1>
             <h3>You can see all TweetCool messages!</h3>
             <button onclick="window.location.href ='/Index';">Back</button>
 
 
             <div style="background-color: aquamarine">
-                @foreach (var username in MessageBoardModel.Messages.Keys)
+                @foreach (Tweet tweet in MessageBoardModel.Tweets)
                 {
-                    <a class="name" id="username">@username:</a>
+                    <a class="name" id="username">@tweet.UserName:</a>
                     <br>
-                    @foreach (Tweet message in MessageBoardModel.Messages[username])
-                    {
-                        <a class="date" id="date">(@message.Date)</a>
-                        <br>
-                        <p class="tweet" id="tweet">@message.Message</p>
-                    }
+                    <a class="date" id="date">(@tweet.Date)</a>
+                    <br>
+                    <p class="tweet" id="tweet">@tweet.Message</p>
                 }
             </div>
 

@@ -9,7 +9,7 @@ namespace TweetCool
 {
     public class MessageBoardModel : PageModel
     {
-        public static Dictionary<string, List<Tweet>> Messages = new Dictionary<string, List<Tweet>>();
+        public static List<Tweet> Tweets = new List<Tweet>();
 
         public void OnGet()
         {

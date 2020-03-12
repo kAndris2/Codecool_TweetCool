@@ -24,18 +24,7 @@ namespace TweetCool.Pages
 
         public void OnPost([FromForm(Name = "username")] string name, [FromForm(Name = "message")] string message)
         {
-            List<Tweet> tweets = new List<Tweet>();
-            Tweet tweet = new Tweet(name, message);
-            tweets.Add(tweet);
-
-            if (MessageBoardModel.Messages.ContainsKey(name))
-            {
-                MessageBoardModel.Messages[name].Add(tweet);
-            }
-            else
-            {
-                MessageBoardModel.Messages.Add(name, tweets);
-            }
+            MessageBoardModel.Tweets.Add(new Tweet(name, message));
             Response.Redirect("/MessageBoard");
         }
     }
