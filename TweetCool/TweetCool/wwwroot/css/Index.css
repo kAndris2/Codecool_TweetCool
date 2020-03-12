@@ -1,0 +1,38 @@
+﻿body {
+    background-color: black;
+}
+
+h1 {
+    color: darkturquoise;
+    text-align: center;
+}
+
+h3 {
+    color: darkturquoise;
+    text-align: center;
+    text-decoration: underline;
+}
+
+label {
+    color: orange;
+}
+
+#textbox {
+    height: 120px;
+    width: 220px;
+}
+
+a.name {
+    font-weight: 900;
+    color: black;
+}
+
+a.date {
+    font-style: oblique;
+    color: gray;
+}
+
+p.tweet {
+    color: cornflowerblue;
+    font-weight: bolder;
+}

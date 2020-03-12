@@ -1,0 +1,35 @@
+﻿@page
+@model TweetCool.MessageBoardModel
+@{
+    ViewData["Title"] = "MessageBoard";
+}
+
+    <html>
+        <head>
+            <title>All messages></title>
+            <link rel="stylesheet" href="~/css/Index.css"/>
+        </head>
+
+        <body>
+            <h1>This is the Messageboard</h1>
+            <h3>You can see all TweetCool messages!</h3>
+            <button onclick="window.location.href ='/Index';">Back</button>
+
+
+            <div style="background-color: aquamarine">
+                @foreach (var username in MessageBoardModel.Messages.Keys)
+                {
+                    <a class="name" id="username">@username:</a>
+                    <br>
+                    @foreach (Tweet message in MessageBoardModel.Messages[username])
+                    {
+                        <a class="date" id="date">(@message.Date)</a>
+                        <br>
+                        <p class="tweet" id="tweet">@message.Message</p>
+                    }
+                }
+            </div>
+
+        </body>
+    </html>
+
