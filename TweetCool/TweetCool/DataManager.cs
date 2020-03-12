@@ -25,10 +25,17 @@ namespace TweetCool
         {
             XmlSerializer reader = new XmlSerializer(typeof(List<Tweet>));
             List<Tweet> i;
-            using (FileStream readfile = File.OpenRead(FILENAME))
+
+            if (File.Exists(FILENAME))
             {
-                i = (List<Tweet>)reader.Deserialize(readfile);
+                using (FileStream readfile = File.OpenRead(FILENAME))
+                {
+                    i = (List<Tweet>)reader.Deserialize(readfile);
+                }
             }
+            else
+                i = new List<Tweet>();
+
             return i;
         }
     }

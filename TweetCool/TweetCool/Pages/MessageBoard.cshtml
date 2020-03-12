@@ -16,16 +16,18 @@
             <button onclick="window.location.href ='/Index';">Back</button>
 
 
-            <div style="background-color: aquamarine">
+            <div style="background-color: darkcyan">
                 @foreach (Tweet tweet in MessageBoardModel.Tweets)
                 {
-                    <a class="name" id="username">@tweet.UserName:</a>
-                    <br>
-                    <a class="date" id="date">(@tweet.Date)</a>
-                    <br>
-                    <p class="tweet" id="tweet">@tweet.Message</p>
-                }
-            </div>
+                    <ul class="nav-tabs">
+                        <a class="name" id="username">@tweet.UserName:</a>
+                        <br>
+                        <a class="date" id="date">(@tweet.Date)</a>
+                        <br>
+                        <p class="tweet" id="tweet">@tweet.Message</p>
+                    </ul>
+                 }
+             </div>
 
         </body>
     </html>
