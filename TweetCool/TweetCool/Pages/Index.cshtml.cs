@@ -19,12 +19,13 @@ namespace TweetCool.Pages
 
         public void OnGet()
         {
-
+            MessageBoardModel.Tweets = new DataManager().Import();
         }
 
         public void OnPost([FromForm(Name = "username")] string name, [FromForm(Name = "message")] string message)
         {
             MessageBoardModel.Tweets.Add(new Tweet(name, message));
+            new DataManager().Save(MessageBoardModel.Tweets);
             Response.Redirect("/MessageBoard");
         }
     }

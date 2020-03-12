@@ -17,5 +17,8 @@ namespace TweetCool
             Message = message;
             Date = DateTime.Now;
         }
+
+        public Tweet()
+        { }
     }
 }
